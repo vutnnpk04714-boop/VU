@@ -163,13 +163,18 @@
         // Nếu không có ảnh, placeholder mặc định sẽ được sử dụng.
         document.addEventListener('DOMContentLoaded', () => {
             const profileImgElement = document.getElementById('profile-picture');
-            const realImageUrl = 'https://placehold.co/150x150/4f46e5/ffffff?text=Vũ'; // Thay thế bằng URL ảnh của bạn
+            
+            // *** ĐÂY LÀ ĐOẠN ĐƯỢC CHỈNH SỬA ***
+            // Thay thế URL placeholder bằng URL ảnh bạn vừa cung cấp
+            const realImageUrl = 'tnnVU.jpg'; 
             
             // Kiểm tra và đặt ảnh thật (hoặc giữ placeholder nếu không có)
             profileImgElement.onerror = function() {
                 console.log("Không tải được ảnh thực tế. Dùng placeholder.");
-                profileImgElement.src = 'https://placehold.co/150x150/4f46e5/ffffff?text=AVATAR';
+                // Dùng một placeholder khác nếu ảnh thật không tải được
+                profileImgElement.src = 'https://placehold.co/150x150/ef4444/ffffff?text=Lỗi+Ảnh'; 
             };
+            // Cập nhật ảnh chính
             profileImgElement.src = realImageUrl;
         });
 
